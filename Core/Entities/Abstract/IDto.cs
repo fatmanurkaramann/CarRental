@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Entities
+namespace Core.Abstract.Entities
 {
-    public interface IEntity
+     public interface IDto
     {
     }
 }
