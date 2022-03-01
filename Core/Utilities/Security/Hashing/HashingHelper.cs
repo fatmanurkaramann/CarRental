@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Utilities.Security.Hashing
 {
-    public class HashingHelper
+    public class HashingHelper 
     {
         public static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
@@ -35,3 +35,4 @@ namespace Core.Utilities.Security.Hashing
         }
     }
 }
+
