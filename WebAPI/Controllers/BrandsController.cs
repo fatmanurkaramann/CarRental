@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -23,6 +24,16 @@ namespace WebAPI.Controllers
         public IActionResult GetAll()
         {
             var result = _brandService.GetAll();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpPost("add")]
+        public IActionResult Add(Brand brand)
+        {
+            var result = _brandService.Add(brand);
             if (result.Success)
             {
                 return Ok(result);

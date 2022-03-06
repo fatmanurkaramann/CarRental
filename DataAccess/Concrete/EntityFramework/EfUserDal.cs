@@ -16,8 +16,8 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (var context = new CarAppDbContext())
             {
-                var result = from operationClaim in context.OPERATİONCLAİMS
-                             join userOperationClaim in context.USEROPERATİONCLAİMS
+                var result = from operationClaim in context.OPERATIONCLAIMS
+                             join userOperationClaim in context.USEROPERATIONCLAIMS
                                  on operationClaim.Id equals userOperationClaim.OperationClaimId
                              where userOperationClaim.UserId == user.Id
                              select new OperationClaim { Id = operationClaim.Id, Name = operationClaim.Name };

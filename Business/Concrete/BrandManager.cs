@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspect.Autofac;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -17,6 +18,12 @@ namespace Business.Concrete
         public BrandManager(IBrandDal brandDal)
         {
             _brandDal = brandDal;
+        }
+        [SecuredOperation("admin",Priority =1)]
+        public IResult Add(Brand brand)
+        {
+            _brandDal.Add(brand);
+            return new SuccessResult();
         }
 
         public IDataResult<List<Brand>> GetAll()
