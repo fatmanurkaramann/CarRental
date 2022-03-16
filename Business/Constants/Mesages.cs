@@ -32,6 +32,7 @@ namespace Business.Constants
         public static string UserAlreadyExists = "Kullanıcı mevcut!";
         public static string AccessTokenCreated = "Token olusturuldu.";
 
-        public static string AuthorizationDenied = "";
+        public static string AuthorizationDenied = "Yetkilendirme reddedildi.";
+        public static string RentalsListed = "Kiralama bilgileri listelendi.";
     }
 }
